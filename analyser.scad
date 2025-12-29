@@ -4,6 +4,7 @@ include <BOSL2/gears.scad>
 $fn = 80;
 depth = 3.5;
 leng = 90 + 25;
+width = 31.78;
 lip_extra = 1;
 gear_thickness = 2;
 hole = 27.88 - 3.5;
@@ -17,7 +18,7 @@ teethb = 25;
 
 // Bottom
 difference() {
-	cube([leng, 31.78, depth]);
+	cube([leng, width, depth]);
 	translate([16, 16, 0]) {
 		for ( i = [0 : 3] ){
 			// Hole for gears to fit into
@@ -27,20 +28,20 @@ difference() {
 		cylinder(h=depth, d=hole);
 	}
 	// Holes for top cylinders to clip into
-	translate([3, 31.78 - 3, 0])
+	translate([3, width - 3, 0])
 		cylinder(h = depth, d = 3);
 	translate([3, 3, 0])
 		cylinder(h = depth, d = 3);
 	translate([leng - 15, 3, 0])
 		cylinder(h = depth, d = 3);
-	translate([leng - 15, 31.78 - 3, 0])
+	translate([leng - 15, width - 3, 0])
 		cylinder(h = depth, d = 3);
 }
 
 // Top
 translate([0, 0, depth]){
 	difference() {
-		cube([leng, 31.78, depth]);
+		cube([leng, width, depth]);
 		translate([16, 16, 0]) {
 			cylinder(h=depth, d=hole - lip_extra);
 		}
@@ -61,13 +62,13 @@ translate([0, 0, depth]){
 	}
 	// Cylinders to clip into bottom holes
 	translate([0, 0, -depth]){
-		translate([3, 31.78 - 3, 0])
+		translate([3, width - 3, 0])
 			cylinder(h = depth, d = 3-tol);
 		translate([3, 3, 0])
 			cylinder(h = depth, d = 3-tol);
 		translate([leng - 15, 3, 0])
 			cylinder(h = depth, d = 3-tol);
-		translate([leng - 15, 31.78 - 3, 0])
+		translate([leng - 15, width - 3, 0])
 			cylinder(h = depth, d = 3-tol);
 	}
 }
