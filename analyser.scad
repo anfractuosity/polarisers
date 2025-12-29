@@ -47,14 +47,14 @@ translate([0, 0, depth]){
 		}
 		translate([16, 16, 0]) {
 			color("green") {
-				cylinder(h = gear_thickness, d = 30)
+				cylinder(h = gear_thickness + tol, d = 30)
 				spur_gear(circ_pitch=pitch, mod=2, teeth=teetha, thickness=gear_thickness,
 							shaft_diam=hole - lip_extra);
 				for ( i = [0 : 3] ){
 					translate([offset + (i * gear_shift), 0, 0]){
 						spur_gear(circ_pitch=pitch, mod=2, teeth=teethb, thickness=gear_thickness,
 									shaft_diam=3);
-						cylinder(h = gear_thickness, d = 28);
+						cylinder(h = gear_thickness + tol, d = 28);
 					}
 				}
 			}
