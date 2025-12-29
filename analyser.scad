@@ -12,6 +12,7 @@ offset = 25.5;
 gear_shift = 23.2;
 tol = 0.25;
 tol_tight = 0.1;
+tol_cyl_tight = 0.12;
 pitch = 2.9;
 teetha = 30;
 teethb = 25;
@@ -63,13 +64,13 @@ translate([0, 0, depth]){
 	// Cylinders to clip into bottom holes
 	translate([0, 0, -depth]){
 		translate([3, width - 3, 0])
-			cylinder(h = depth, d = 3-tol);
+			cylinder(h = depth, d = 3-tol_cyl_tight);
 		translate([3, 3, 0])
-			cylinder(h = depth, d = 3-tol);
+			cylinder(h = depth, d = 3-tol_cyl_tight);
 		translate([leng - 15, 3, 0])
-			cylinder(h = depth, d = 3-tol);
+			cylinder(h = depth, d = 3-tol_cyl_tight);
 		translate([leng - 15, width - 3, 0])
-			cylinder(h = depth, d = 3-tol);
+			cylinder(h = depth, d = 3-tol_cyl_tight);
 	}
 }
 
