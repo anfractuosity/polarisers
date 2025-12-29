@@ -10,9 +10,10 @@ gear_thickness = 2;
 hole = 27.88 - 3.5;
 offset = 25.5;
 gear_shift = 23.2;
+gear_tol = 0.45;
 tol = 0.25;
 tol_tight = 0.1;
-tol_cyl_tight = 0.12;
+tol_cyl_tight = 0.16;
 pitch = 2.9;
 teetha = 30;
 teethb = 25;
@@ -48,14 +49,14 @@ translate([0, 0, depth]){
 		}
 		translate([16, 16, 0]) {
 			color("green") {
-				cylinder(h = gear_thickness + tol, d = 30)
+				cylinder(h = gear_thickness + gear_tol, d = 30.5)
 				spur_gear(circ_pitch=pitch, mod=2, teeth=teetha, thickness=gear_thickness,
 							shaft_diam=hole - lip_extra);
 				for ( i = [0 : 3] ){
 					translate([offset + (i * gear_shift), 0, 0]){
 						spur_gear(circ_pitch=pitch, mod=2, teeth=teethb, thickness=gear_thickness,
 									shaft_diam=3);
-						cylinder(h = gear_thickness + tol, d = 28);
+						cylinder(h = gear_thickness + gear_tol, d = 28);
 					}
 				}
 			}
