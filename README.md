@@ -6,6 +6,8 @@ to be used in place of U-AN360 and U-PO.  Printed in PLA using A1 mini.
 Makes use of https://github.com/BelfrySCAD/BOSL2 for the gears, which
 you will need to have included with OpenSCAD.
 
+![3D Printed Analyser](imgs/analyser.jpg)
+
 ![Analyser Bottom](imgs/analyser.png)
 
 ![Analyser Top](imgs/analyser2.png)
