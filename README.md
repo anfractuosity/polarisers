@@ -8,6 +8,8 @@ you will need to have included with OpenSCAD.
 
 ![3D Printed Analyser](imgs/analyser.jpg)
 
+![3D Printed Polariser](imgs/polariser.jpg)
+
 ![Analyser Bottom](imgs/analyser.png)
 
 ![Analyser Top](imgs/analyser2.png)
